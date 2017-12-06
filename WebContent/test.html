@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>登录页面</title>
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.bootcss.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+  <script type="text/javascript">
+  $(function(){
+	   	$("[name=a]").on("change",function(){
+	  		alert($("[name=a]:checked").val()); 
+	  	}); 
+ /*  	$("[name=b]").on("change",function(){
+  		$("[name=b]:checked").each(function(i,e){
+  			//alert(e.value);
+  			console.log($(this).val());
+  		});
+  	}); */
+  	
+  	$("#all").on("change",function(){
+		$("[name=b]").prop("checked",$(this).prop("checked"));
+  	});
+  	$("[name=b]").on("change",function(){
+		$("#all").prop("checked",$("[name=b]:checked").length==$("[name=b]").length);
+  	});
+  	
+  	$("#s").on("change",function(){
+  		alert($(this).val());
+  	});
+  	$("#s").val("bj");
+  });
+  
+  </script>
+<body>
+
+	<form id="fm" action="#">
+		<div id="app">
+			<input id="r1" type="radio" name="a" value="qq" checked="checked"/> 
+			<label for="r1">QQ</label>
+			<input type="radio" name="a" value="wx"/> WX	
+			<input type="radio" name="a" value="zf"/> ZF
+		</div>
+		<hr/>
+		<div id="ch">
+			<input id="all" type="checkbox" />
+			<label for="all">全选</label>
+			<input id="ch_1" type="checkbox" name="b" value="aihao"/>
+			<label for="ch_1">爱好</label>
+			<input id="ch_2" type="checkbox" name="b" value="youxi"/>
+			<label for="ch_2">游戏</label>
+			<input id="ch_3" type="checkbox" name="b" value="city"/>
+			<label for="ch_3">城市</label>
+		</div>
+		<hr/>
+		
+		<div id="se">
+			<select name="sel" id="s">
+				<option value="sjz">石家庄</option>
+				<option value="bj" >北京</option>
+			</select>
+		</div>
+		<hr/>
+		
+		<div id="aa">
+			<input type="radio" name="xingbie" value="n"/>男
+			<input type="radio" name="xingbie" value="nv" />女1
+			<select id="bb" name="xb" >
+				<option ></option>
+				<option value="n">男</option>
+				<option value="nv" >女2</option>
+			</select>
+		</div>
+		<hr/>
+		<div id="ta">
+			<textarea id="at" name="txar" rows="3" cols="10">我会换个大我发给</textarea>
+		</div>
+		<hr/>
+		<div id="f">
+			<input id="file" type="file" name="fileg"/>
+		</div>
+		<button id="btn">提交</button>
+	</form>
+	
+	<script type="text/javascript">
+		$(function(){
+			$("#bb").val("nv");
+			$("[name=xingbie][value=nv]").prop("checked",true);
+			$("#btn").on("click",function(){
+				alert($("#fm").serialize());
+			});
+			/* alert($("#at").val()); */
+		});
+		
+		
+	</script>
+	
+</body>
+</html>

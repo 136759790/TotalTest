@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>登录页面</title>
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.bootcss.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td> <input> </td>
+				<td> <input> </td>
+				<td> <button id="add">新增</button> </td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+<script>
+	
+$(function(){
+	$('#add').on('click',function(){
+		var html='<tr><td> <input> </td><td> <input> </td><td> <button>删除</button> </td></tr>';
+		$('tbody').append(html);
+	});
+	
+	$('body').on('click','tbody button:gt(0)',function(){
+		$(this).parent().parent().remove();
+	});
+	
+	
+});
+
+</script>
+</html>
+
+

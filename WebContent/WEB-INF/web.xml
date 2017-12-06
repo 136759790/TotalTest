@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>ss</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>FirstServlet</servlet-name>
+    <servlet-class>  com.servletTest.FirstServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FirstServlet</servlet-name>
+    <url-pattern>/first</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SecondServlet</servlet-name>
+    <servlet-class> com.servletTest.SecondServlet</servlet-class>
+    <init-param>
+      <param-name>user</param-name>
+      <param-value>root</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SecondServlet</servlet-name>
+    <url-pattern>/second</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>username</param-name>
+    <param-value>qxq</param-value>
+  </context-param>
+ 
+  <servlet>
+  	<servlet-name>NewServlet</servlet-name>
+  	<servlet-class>com.excel.NewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NewServlet</servlet-name>
+  	<url-pattern>/new</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>index</servlet-name>
+  	<servlet-class>com.ss.IndexServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>index</servlet-name>
+  	<url-pattern>/index</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>upload</servlet-name>
+  	<servlet-class>com.ss.UploadServlet</servlet-class>
+  	<multipart-config>
+		<max-file-size>52428800</max-file-size>
+		<max-request-size>52428800</max-request-size>
+		<file-size-threshold>0</file-size-threshold>
+  	</multipart-config>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>upload</servlet-name>
+  	<url-pattern>/upload</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>index2</servlet-name>
+  	<servlet-class>com.ss.IndexServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>index2</servlet-name>
+  	<url-pattern>/index2</url-pattern>
+  </servlet-mapping>
+  <session-config>
+  	<session-timeout>1</session-timeout>
+  	<cookie-config>
+		<name>JJSESSIONID</name>
+	</cookie-config>
+  </session-config>
+  
+</web-app>
